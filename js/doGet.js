@@ -7,15 +7,15 @@
 //*********************************************************************************
 
 function doGet(e) {
-  var template, faviconUrl;
-  if (e.parameter.player) { //main page
+  var template;
+  if (e.parameter.user) { //main page
     template = HtmlService.createTemplateFromFile('html/MainPage');
-    template.data = {playerId: e.parameter.player};
+    template.data = {userId: e.parameter.user};
     return template
     .evaluate()
     .setSandboxMode(HtmlService.SandboxMode.IFRAME)
     .addMetaTag('viewport', 'width=device-width, initial-scale=1')
-    .setTitle("Score for " + e.parameter.player)
+    .setTitle("Main Page")
   } 
   
   else 
@@ -25,12 +25,10 @@ function doGet(e) {
     .evaluate()
     .setSandboxMode(HtmlService.SandboxMode.IFRAME)
     .addMetaTag('viewport', 'width=device-width, initial-scale=1')
-    .setTitle("Welcome to SpeedScore LIVE")
+    .setTitle("Welcome to the CZT Project")
   }
 }
-  
- //include: Allows us to include files using templated HTML, per Google's best practices 
-//(https://developers.google.com/apps-script/guides/html/best-practices)
+
 function include(filename) {
   return HtmlService.createHtmlOutputFromFile(filename)
       .getContent();
