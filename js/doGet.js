@@ -26,7 +26,6 @@ function doGet(e) {
     .setSandboxMode(HtmlService.SandboxMode.IFRAME)
     .addMetaTag('viewport', 'width=device-width, initial-scale=1')
     .setTitle("Welcome to SpeedScore LIVE")
-    .setFaviconUrl(faviconUrl);
   }
 }
   
